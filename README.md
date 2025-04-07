@@ -35,3 +35,7 @@ https://github.com/spbsupprt/Logs/tree/main/src
 
 https://github.com/spbsupprt/Logs/blob/main/log.yml
 
+![image](https://github.com/user-attachments/assets/882b3d0a-0414-4d27-8c92-0e4fd2125684)
+
+Финальная проверка:
+

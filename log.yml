@@ -16,7 +16,7 @@
         - audispd-plugins
         - curl
         state: present
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 
     - name: log - Install auditd, curl
       ansible.builtin.apt:
@@ -25,7 +25,7 @@
         - audispd-plugins
         - curl
         state: present
-      when: ansible_facts['hostname'] == "log"
+      when: ansible_facts['nodename'] == "log"
 
     - name: log - Copy rsyslog config
       ansible.builtin.copy:
@@ -35,14 +35,14 @@
         group: root
         mode: '0644'
         backup: yes
-      when: ansible_facts['hostname'] == "log"
+      when: ansible_facts['nodename'] == "log"
 
     - name: log - Restart rsyslog
       ansible.builtin.systemd:
         unit: rsyslog
         state: restarted
         daemon_reload: yes
-      when: ansible_facts['hostname'] == "log"
+      when: ansible_facts['nodename'] == "log"
 
     - name: web - Copy nginx config
       ansible.builtin.copy:
@@ -52,7 +52,7 @@
         group: root
         mode: '0644'
         backup: yes
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 
     - name: web - Copy auditd rules config
       ansible.builtin.copy:
@@ -62,7 +62,7 @@
         group: root
         mode: '0640'
         backup: yes
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 
     - name: web - Add rsyslog rule
       ansible.builtin.copy:
@@ -72,26 +72,26 @@
         group: root
         mode: '0644'
         backup: yes
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 
     - name: log - Restart auditd
       ansible.builtin.systemd:
         unit: auditd
         state: restarted
         daemon_reload: yes
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 
     - name: log - Restart nginx
       ansible.builtin.systemd:
         unit: nginx
         state: restarted
         daemon_reload: yes
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 
     - name: log - Restart rsyslog
       ansible.builtin.systemd:
         unit: rsyslog
         state: restarted
         daemon_reload: yes
-      when: ansible_facts['hostname'] == "web"
+      when: ansible_facts['nodename'] == "web"
 ...

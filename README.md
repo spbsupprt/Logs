@@ -27,3 +27,10 @@ Logs
 ![image](https://github.com/user-attachments/assets/41425ee8-f1ca-44a6-818b-fd3fbe7664b6)
 
 
+Готовим конфигурационные файлы:
+
+https://github.com/spbsupprt/Logs/tree/main/src
+
+Пишем плейбук и применяем:
+
+https://github.com/spbsupprt/Logs/blob/main/log.yml

@@ -34,3 +34,4 @@ https://github.com/spbsupprt/Logs/tree/main/src
 Пишем плейбук и применяем:
 
 https://github.com/spbsupprt/Logs/blob/main/log.yml
+

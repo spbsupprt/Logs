@@ -29,7 +29,7 @@
 
     - name: log - Copy rsyslog config
       ansible.builtin.copy:
-        src: "files/log/etc/rsyslog.conf"
+        src: "src/rsyslog.conf"
         dest: /etc/
         owner: root
         group: root
@@ -46,7 +46,7 @@
 
     - name: web - Copy nginx config
       ansible.builtin.copy:
-        src: "files/web/etc/nginx/nginx.conf"
+        src: "src/nginx.conf"
         dest: /etc/nginx
         owner: root
         group: root
@@ -56,7 +56,7 @@
 
     - name: web - Copy auditd rules config
       ansible.builtin.copy:
-        src: "files/web/etc/audit/rules.d/audit.rules"
+        src: "src/audit.rules"
         dest: /etc/audit/rules.d
         owner: root
         group: root
@@ -66,7 +66,7 @@
 
     - name: web - Add rsyslog rule
       ansible.builtin.copy:
-        src: "files/web/etc/rsyslog.d/10-nginx-audit.conf"
+        src: "src/10-nginx-audit.conf"
         dest: /etc/rsyslog.d
         owner: root
         group: root

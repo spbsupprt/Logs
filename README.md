@@ -37,5 +37,14 @@ https://github.com/spbsupprt/Logs/blob/main/log.yml
 
 ![image](https://github.com/user-attachments/assets/882b3d0a-0414-4d27-8c92-0e4fd2125684)
 
+
+Поделаем запросы, посносим индекс и т.д.
+
+curl localhost && rm -rf /var/www/index.nginx-debian.html && curl localhost
+
+
 Финальная проверка:
 
+![image](https://github.com/user-attachments/assets/0cf0f29d-eab1-4a74-9c75-fd8a6f75b233)
+
+![image](https://github.com/user-attachments/assets/1036f884-5276-497f-a709-f88b1f63bcd7)
